@@ -5,12 +5,15 @@ import * as CommonHelper from "../../common/index.js";
 export const createUserHelper = async (dataObject: any) => {
   const { trxId, name, role, email, baseRate } = dataObject;
   try {
+    const password = "default123";
+
     const response = await UserTable.createUser({
       trxId,
       name,
       role,
       email,
       baseRate,
+      password,
     });
 
     return Promise.resolve(response);

@@ -102,7 +102,17 @@ cd frontend && npm run dev
 With both servers running, navigate to the frontend URL (e.g., `http://localhost:5173`) to interact with the application.
 
 ---
+## Testing Flow
 
+1. **Login as Admin** – use credentials from `seed.ts` (e.g., email `budi@court.go.id`, password `admin123`).
+2. **Create a new job** via the admin UI or use a seeded job and assign a reporter. After assignment, job status becomes **ASSIGNED**.
+3. **Login as the assigned Reporter** and submit the transcription. Status changes to **TRANSCRIBED**.
+4. **Switch back to Admin**, locate jobs with status **TRANSCRIBED**, and assign an editor. The job status becomes **REVIEWED**.
+5. **Login as the assigned Editor**, review and submit the transcript. After submission, the job status becomes **COMPLETED**.
+
+> The seed file (`backend/src/db/seed.ts`) lists the emails and passwords for all preset users.
+
+---
 ## Useful Scripts Summary
 
 | Script                     | Description                                                 |

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.js";
 
 export const ProtectedRoute: React.FC<{
@@ -7,6 +7,7 @@ export const ProtectedRoute: React.FC<{
   allowedRoles?: string[];
 }> = ({ children, allowedRoles }) => {
   const { isAuthenticated, loading, user } = useAuth();
+  const { pathname } = useLocation();
 
   if (loading) {
     return (
@@ -63,7 +64,7 @@ export const ProtectedRoute: React.FC<{
   }
 
   // Intercept and redirect reporters and editors landing on "/"
-  if (user && window.location.pathname === "/") {
+  if (user && pathname === "/") {
     if (user.role === "reporter") {
       return <Navigate to="/reporter/jobs" replace />;
     }
