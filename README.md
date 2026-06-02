@@ -9,7 +9,7 @@ The _Court Reporting System_ is a full‑stack application that provides a web i
 ## Prerequisites
 
 - **Node.js** (v20 or later) and **npm** – used for both backend and frontend.
-- **Database** – the backend supports MySQL (`mysql2`) and PostgreSQL (`pg`). Install and run the database of your choice.
+- **Database** – the backend use PostgreSQL (`pg`). Install and run the database.
 - **Git** – to clone the repository (if you haven't already).
 
 ---
@@ -39,7 +39,7 @@ court-reporting-system/
      ```bash
      cp .env.example .env
      ```
-   - Edit `.env` to set `DATABASE_URL` (e.g., `mysql://user:pass@localhost:3306/dbname` or `postgres://...`).
+   - Edit `.env` to set `DATABASE_URL` (e.g., `postgres://user:pass@localhost:3306/dbname`).
 4. **Run database migrations**
    ```bash
    npm run db:push   # creates tables based on Drizzle schema
@@ -115,13 +115,13 @@ With both servers running, navigate to the frontend URL (e.g., `http://localhost
 ---
 ## Useful Scripts Summary
 
-| Script                     | Description                                                 |
-| -------------------------- | ----------------------------------------------------------- |
-| `npm run dev` (backend)    | Starts the Express server with live TypeScript compilation. |
-| `npm run db:push`          | Syncs the Drizzle schema to the database (creates tables).  |
-| `npm run db:migrate`       | Runs migration files (if you use migration scripts).        |
-| `npm run db:seed`          | Populates the database with seed data.                      |
-| `npm run dev` (frontend)   | Starts the Vite dev server (React UI).                      |
-| `npm run build` (frontend) | Produces a production‑ready bundle in `dist/`.              |
+| Script                        | Description                                                 |
+| --------------------------    | ----------------------------------------------------------- |
+| `npm run dev` (backend)       | Starts the Express server with live TypeScript compilation. |
+| `npm run db:push` (backend)   | Syncs the Drizzle schema to the database (creates tables).  |
+| `npm run db:migrate` (backend)| Runs migration files (if you use migration scripts).        |
+| `npm run db:seed` (backend)   | Populates the database with seed data.                      |
+| `npm run dev` (frontend)      | Starts the Vite dev server (React UI).                      |
+| `npm run build` (frontend)    | Produces a production‑ready bundle in `dist/`.              |
 
 ---
