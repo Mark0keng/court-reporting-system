@@ -1,0 +1,94 @@
+@import 'styles/config';
+@import 'styles/mixins';
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background-color: $color-bg-deep;
+  color: $color-text-primary;
+}
+
+.app-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-header {
+  height: 80px;
+  @include glassmorphic(0.4, 12px, 0.8);
+  border-bottom: 1px solid $color-border-dark;
+  padding: 0 $space-8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  &-badge {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-text-secondary;
+    background-color: $color-bg-panel;
+    padding: $space-1 $space-3;
+    border-radius: $radius-md;
+    border: 1px solid $color-border-dark;
+  }
+
+  &-divider {
+    color: $color-text-disabled;
+  }
+
+  &-title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+  }
+
+  &-status {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-1-5 $space-3;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    background-color: $color-bg-panel;
+    color: $color-brand-400;
+    border: 1px solid rgba($color-border-base, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  &-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-full;
+    background-color: $color-success-text;
+    margin-right: $space-2;
+    animation: fadeIn 1s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+}
+
+.app-main {
+  flex: 1;
+  padding: $space-8;
+  overflow-y: auto;
+  background: linear-gradient(to bottom, $color-bg-base 0%, $color-bg-base 50%, $color-bg-deep 100%);
+  @include custom-scrollbar;
+}

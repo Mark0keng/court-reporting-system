@@ -1,0 +1,119 @@
+// ==========================================================================
+// CRS Design System - Configuration Variables (_config.scss)
+// ==========================================================================
+
+// --- Colors ---
+// Brand Colors (Cobalt / Indigo)
+$color-brand-50:  #f0f7ff;
+$color-brand-100: #e0effe;
+$color-brand-200: #bae0fd;
+$color-brand-300: #7cc8fc;
+$color-brand-400: #38abf9;
+$color-brand-500: #0e8fe3;
+$color-brand-600: #0270be;
+$color-brand-700: #035a9a;
+$color-brand-800: #074c80;
+$color-brand-900: #0c406b;
+$color-brand-950: #082949;
+
+$color-indigo-400: #818cf8;
+$color-indigo-500: #6366f1;
+$color-indigo-600: #4f46e5;
+$color-indigo-700: #4338ca;
+
+// Neutrals (Slate / Dark theme baseline)
+$color-bg-deep:   #020617; // Slate 950
+$color-bg-base:   #0f172a; // Slate 900
+$color-bg-panel:  #1e293b; // Slate 800
+$color-bg-light:  #334155; // Slate 700
+
+$color-border-dark:  #1e293b; // Slate 800
+$color-border-base:  #334155; // Slate 700
+$color-border-light: #475569; // Slate 600
+
+$color-text-primary:   #f8fafc; // Slate 50
+$color-text-secondary: #94a3b8; // Slate 400
+$color-text-muted:     #64748b; // Slate 500
+$color-text-disabled:  #475569; // Slate 600
+
+// Functional Colors (Status Badges / Alerts)
+$color-success-bg:     rgba(16, 185, 129, 0.1);
+$color-success-text:   #34d399; // Emerald 400
+$color-success-border: rgba(16, 185, 129, 0.2);
+
+$color-warning-bg:     rgba(245, 158, 11, 0.1);
+$color-warning-text:   #fbbf24; // Amber 400
+$color-warning-border: rgba(245, 158, 11, 0.2);
+
+$color-error-bg:       rgba(239, 68, 68, 0.1);
+$color-error-text:     #f87171; // Red 400
+$color-error-border:   rgba(239, 68, 68, 0.2);
+
+$color-info-bg:        rgba(14, 143, 227, 0.1);
+$color-info-text:      #38abf9; // Brand Blue 400
+$color-info-border:    rgba(14, 143, 227, 0.2);
+
+$color-received-bg:     rgba(59, 130, 246, 0.1);
+$color-received-text:   #60a5fa; // Blue 400
+$color-received-border: rgba(59, 130, 246, 0.2);
+
+$color-progress-bg:     rgba(99, 102, 241, 0.1);
+$color-progress-text:   #818cf8; // Indigo 400
+$color-progress-border: rgba(99, 102, 241, 0.2);
+
+$color-review-bg:       rgba(244, 63, 94, 0.1);
+$color-review-text:     #fb7185; // Rose 400
+$color-review-border:   rgba(244, 63, 94, 0.2);
+
+$color-assigned-bg:     rgba(217, 70, 239, 0.1);
+$color-assigned-text:   #e879f9; // Fuchsia 400
+$color-assigned-border: rgba(217, 70, 239, 0.2);
+
+// --- Typography Scale ---
+$font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+$font-size-xs:   0.75rem;   // 12px
+$font-size-sm:   0.875rem;  // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-lg:   1.125rem;  // 18px
+$font-size-xl:   1.25rem;   // 20px
+$font-size-2xl:  1.5rem;    // 24px
+$font-size-3xl:  1.875rem;  // 30px
+$font-size-4xl:  2.25rem;   // 36px
+
+$font-weight-light:    300;
+$font-weight-normal:   400;
+$font-weight-medium:   500;
+$font-weight-semibold: 600;
+$font-weight-bold:     700;
+$font-weight-extrabold:800;
+
+// --- Spacing Scale ---
+$space-1:  0.25rem; // 4px
+$space-1-5:0.375rem;// 6px
+$space-2:  0.5rem;  // 8px
+$space-2-5:0.625rem;// 10px
+$space-3:  0.75rem; // 12px
+$space-3-5:0.875rem;// 14px
+$space-4:  1rem;    // 16px
+$space-5:  1.25rem; // 20px
+$space-6:  1.5rem;  // 24px
+$space-8:  2rem;    // 32px
+$space-10: 2.5rem;  // 40px
+$space-12: 3rem;    // 48px
+
+// --- Borders & Shadows ---
+$radius-sm: 0.375rem; // 6px
+$radius-md: 0.5rem;   // 8px
+$radius-lg: 0.75rem;  // 12px
+$radius-xl: 1rem;     // 16px
+$radius-2xl:1.25rem;  // 20px
+$radius-full:9999px;
+
+$shadow-sm:     0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-brand:  0 10px 15px -3px rgba(14, 143, 227, 0.15);
+$shadow-rose:   0 10px 15px -3px rgba(244, 63, 94, 0.15);
+$shadow-success:0 10px 15px -3px rgba(16, 185, 129, 0.15);

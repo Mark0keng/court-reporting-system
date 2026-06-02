@@ -1,0 +1,94 @@
+// ==========================================================================
+// CRS Design System - Base styles & resets (_base.scss)
+// ==========================================================================
+
+@import 'config';
+@import 'mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+// --- Global CSS Reset & Box Sizing ---
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: $font-family-sans;
+  background-color: $color-bg-deep;
+  color: $color-text-primary;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $color-bg-deep;
+  color: $color-text-primary;
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  @include custom-scrollbar;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  @include transition-smooth(color);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+// --- Keyframe Animations ---
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+// Global Animation helper classes
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+// Grid utilities
+.grid-container {
+  display: grid;
+  gap: $space-5;
+}
+
+// Typography utilities
+.text-gradient-brand {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, $color-brand-400 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

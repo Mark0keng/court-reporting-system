@@ -1,0 +1,52 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.job-id-badge {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-secondary;
+  background-color: $color-bg-deep;
+  border: 1px solid $color-border-dark;
+  padding: $space-1 $space-2;
+  border-radius: $radius-sm;
+}
+
+.job-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.job-title {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: block;
+}
+
+.job-desc {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  display: block;
+  @include line-clamp(1);
+}
+
+.metadata-cell {
+  font-size: $font-size-xs;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-item {
+  display: flex;
+  align-items: center;
+  color: $color-text-secondary;
+
+  svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: $space-1-5;
+    color: #818cf8; // Light Indigo color for editor accent
+    flex-shrink: 0;
+  }
+}

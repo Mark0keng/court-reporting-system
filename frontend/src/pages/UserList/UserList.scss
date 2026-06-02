@@ -1,0 +1,167 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.users-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-4;
+  border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $space-5;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.page-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+
+  .page-title-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $color-brand-400;
+  }
+}
+
+.page-subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $space-1;
+}
+
+.page-content-full {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.table-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+
+  .table-title-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $color-indigo-400;
+  }
+}
+
+.badge-counter {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-muted;
+  background-color: $color-bg-deep;
+  border: 1px solid $color-border-dark;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// User-Specific Table Badge and Cell Styles
+.user-id-badge {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-secondary;
+  background-color: $color-bg-deep;
+  border: 1px solid $color-border-dark;
+  padding: $space-1 $space-2-5;
+  border-radius: $radius-sm;
+}
+
+.user-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: block;
+}
+
+.user-email-row {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+
+  .user-email-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    color: $color-text-muted;
+    flex-shrink: 0;
+  }
+}
+
+.rate-cell {
+  display: flex;
+  align-items: center;
+  gap: $space-1-5;
+  color: $color-text-primary;
+
+  .rate-icon {
+    width: 1rem;
+    height: 1rem;
+    color: $color-text-muted;
+    flex-shrink: 0;
+  }
+
+  .rate-value {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-sm;
+  }
+}
+
+.active-jobs-badge {
+  display: inline-block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  padding: $space-1 $space-2-5;
+  border-radius: $radius-full;
+  text-align: center;
+  white-space: nowrap;
+
+  &.jobs-active {
+    background-color: $color-warning-bg;
+    color: $color-warning-text;
+    border: 1px solid $color-warning-border;
+  }
+
+  &.jobs-empty {
+    background-color: $color-bg-deep;
+    color: $color-text-muted;
+    border: 1px solid $color-border-dark;
+  }
+}
+
+.date-cell {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+}

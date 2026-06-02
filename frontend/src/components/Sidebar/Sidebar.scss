@@ -1,0 +1,223 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.sidebar-aside {
+  width: 256px; // 64 * 4 = 256px
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $color-border-dark;
+  @include glassmorphic(0.85, 16px, 0.9);
+  z-index: 40;
+}
+
+.sidebar-brand {
+  height: 80px; // 20 * 4 = 80px
+  display: flex;
+  align-items: center;
+  padding: 0 $space-6;
+  border-bottom: 1px solid rgba($color-border-dark, 0.8);
+  gap: $space-3;
+}
+
+.sidebar-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-xl;
+  background: linear-gradient(135deg, $color-brand-600 0%, $color-indigo-500 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba($color-brand-500, 0.2);
+  color: $color-text-primary;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.sidebar-brand-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-extrabold;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, $color-brand-300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-brand-subtitle {
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-top: -2px;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: $space-6 $space-4;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  overflow-y: auto;
+  @include custom-scrollbar;
+}
+
+.sidebar-section-title {
+  font-size: 10px;
+  font-weight: $font-weight-bold;
+  color: $color-text-disabled;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0 $space-3;
+  margin-bottom: $space-2;
+  display: block;
+ 
+  &.pt-6 {
+    margin-top: $space-6;
+  }
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-3-5;
+  border-radius: $radius-xl;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  border: 1px solid transparent;
+  @include transition-smooth(all);
+
+  .sidebar-link-icon {
+    width: 1rem;
+    height: 1rem;
+    @include transition-smooth(transform);
+  }
+
+  // Hover triggers nested SVG scales
+  &:hover {
+    .sidebar-link-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  // Active state
+  &-active {
+    background-color: rgba($color-brand-500, 0.1);
+    color: $color-brand-400;
+    border-color: rgba($color-brand-500, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    svg {
+      color: $color-brand-400;
+    }
+  }
+
+  // Inactive state
+  &-inactive {
+    color: $color-text-secondary;
+
+    svg {
+      color: $color-text-muted;
+      @include transition-smooth(color);
+    }
+
+    &:hover {
+      color: $color-text-primary;
+      background-color: rgba($color-bg-light, 0.1);
+
+      svg {
+        color: $color-text-secondary;
+      }
+    }
+  }
+}
+
+.sidebar-stub {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-3-5;
+  border-radius: $radius-xl;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-disabled;
+  cursor: not-allowed;
+  border: 1px solid transparent;
+  opacity: 0.7;
+
+  .sidebar-link-icon {
+    width: 1rem;
+    height: 1rem;
+    color: $color-text-disabled;
+  }
+}
+
+.sidebar-footer {
+  padding: $space-4;
+  border-top: 1px solid rgba($color-border-dark, 0.8);
+  background-color: rgba($color-bg-deep, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.sidebar-profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  background-color: $color-bg-panel;
+  border: 1px solid $color-border-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+}
+
+.sidebar-profile-name {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: block;
+  margin-bottom: -2px;
+}
+
+.sidebar-profile-role {
+  font-size: 10px;
+  color: $color-text-muted;
+  font-weight: $font-weight-medium;
+}
+
+.sidebar-logout-btn {
+  background: transparent;
+  border: none;
+  color: $color-text-muted;
+  cursor: pointer;
+  padding: $space-1-5;
+  border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition-smooth(all);
+
+  &:hover {
+    color: $color-error-text;
+    background-color: rgba($color-error-bg, 0.5);
+  }
+}

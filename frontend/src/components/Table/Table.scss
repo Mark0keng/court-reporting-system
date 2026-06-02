@@ -1,0 +1,182 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.table-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: $radius-2xl;
+  border: 1px solid $color-border-dark;
+  background-color: rgba($color-bg-deep, 0.4);
+  box-shadow: $shadow-md;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  @include custom-scrollbar;
+}
+
+.table-element {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.table-header {
+  background-color: rgba($color-bg-deep, 0.8);
+  border-b: 1px solid $color-border-dark;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &-cell {
+    padding: $space-4 $space-6;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.table-body {
+  font-size: $font-size-sm;
+  background-color: transparent;
+
+  tr {
+    border-bottom: 1px solid rgba($color-border-dark, 0.5);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.table-row {
+  @include transition-smooth(background-color);
+
+  &:hover {
+    background-color: rgba($color-bg-light, 0.15);
+  }
+
+  &-loading {
+    animation: fadeIn 1.5s ease-in-out infinite alternate;
+    background-color: rgba($color-bg-deep, 0.1);
+  }
+
+  &-empty {
+    padding: $space-12 $space-6;
+    text-align: center;
+    color: $color-text-muted;
+  }
+}
+
+.table-cell {
+  padding: $space-4 $space-6;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.table-skeleton-cell {
+  padding: $space-4 $space-6;
+}
+
+.table-skeleton-bar {
+  height: 16px;
+  background-color: $color-bg-panel;
+  border-radius: $radius-md;
+  width: 75%;
+}
+
+.table-empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-8 0;
+}
+
+.table-empty-icon {
+  width: 32px;
+  height: 32px;
+  color: $color-text-disabled;
+}
+
+.table-empty-text {
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+}
+
+// ==========================================================================
+// Semantic Badges (Unified style mapping for CRS Roles & Statuses)
+// ==========================================================================
+
+.badge-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: $font-weight-extrabold;
+  text-transform: uppercase;
+  padding: $space-1 $space-2-5;
+  border-radius: $radius-md;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+
+  // Custom fungsional statuses
+  &.status-NEW {
+    background-color: $color-received-bg;
+    color: $color-received-text;
+    border-color: $color-received-border;
+  }
+
+  &.status-ASSIGNED {
+    background-color: $color-assigned-bg;
+    color: $color-assigned-text;
+    border-color: $color-assigned-border;
+  }
+
+  &.status-TRANSCRIBED {
+    background-color: $color-progress-bg;
+    color: $color-progress-text;
+    border-color: $color-progress-border;
+  }
+
+  &.status-REVIEWED {
+    background-color: rgba(20, 184, 166, 0.1); // Teal bg
+    color: #2dd4bf; // Teal 400
+    border-color: rgba(20, 184, 166, 0.2);
+  }
+
+  &.status-COMPLETED {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: $color-success-text;
+    border-color: rgba(16, 185, 129, 0.4);
+  }
+}
+
+.badge-role {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: $font-weight-extrabold;
+  text-transform: uppercase;
+  padding: $space-1 $space-2-5;
+  border-radius: $radius-md;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+
+  &.role-admin {
+    background-color: $color-error-bg;
+    color: $color-error-text;
+    border-color: $color-error-border;
+  }
+
+  &.role-editor {
+    background-color: rgba($color-indigo-500, 0.1);
+    color: $color-indigo-400;
+    border-color: rgba($color-indigo-500, 0.2);
+  }
+
+  &.role-reporter {
+    background-color: $color-brand-950;
+    color: $color-brand-300;
+    border-color: rgba($color-brand-500, 0.2);
+  }
+}

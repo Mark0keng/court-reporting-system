@@ -1,0 +1,203 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.jobs-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-4;
+  border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $space-5;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.page-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+
+  .page-title-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $color-brand-400;
+  }
+}
+
+.page-subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $space-1;
+}
+
+.page-content-full {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.table-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+
+  .table-title-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $color-indigo-400;
+  }
+}
+
+.badge-counter {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-muted;
+  background-color: $color-bg-deep;
+  border: 1px solid $color-border-dark;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Jobs Table Badges and Specific Cells
+.job-id-badge {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-text-secondary;
+  background-color: $color-bg-deep;
+  border: 1px solid $color-border-dark;
+  padding: $space-1 $space-2;
+  border-radius: $radius-sm;
+}
+
+.job-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.job-title {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: block;
+}
+
+.job-desc {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  display: block;
+  @include line-clamp(1);
+}
+
+.assignment-cell {
+  font-size: $font-size-xs;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.assignment-item {
+  display: flex;
+  align-items: center;
+  color: $color-text-primary;
+}
+
+.assignment-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: $radius-full;
+  margin-right: $space-2;
+  flex-shrink: 0;
+
+  &.dot-reporter {
+    background-color: $color-brand-500;
+  }
+
+  &.dot-editor {
+    background-color: $color-indigo-500;
+  }
+}
+
+.assignment-label {
+  color: $color-text-secondary;
+  margin-right: $space-1;
+}
+
+.metadata-cell {
+  font-size: $font-size-xs;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-item {
+  display: flex;
+  align-items: center;
+  color: $color-text-secondary;
+
+  svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: $space-1-5;
+    color: $color-text-muted;
+    flex-shrink: 0;
+  }
+}
+
+.due-date-item {
+  display: flex;
+  align-items: center;
+  color: $color-error-text;
+  font-weight: $font-weight-semibold;
+
+  svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: $space-1-5;
+    color: rgba($color-error-text, 0.8);
+    flex-shrink: 0;
+  }
+}
+
+.play-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  font-size: $font-size-xs;
+  color: $color-brand-400;
+  font-weight: $font-weight-semibold;
+  background-color: rgba($color-brand-500, 0.05);
+  border: 1px solid rgba($color-brand-500, 0.15);
+  padding: $space-1-5 $space-2-5;
+  border-radius: $radius-md;
+  @include transition-smooth(all);
+  @include hover-lift(0.98, -1px);
+
+  &:hover {
+    color: $color-brand-300;
+    background-color: rgba($color-brand-500, 0.1);
+    border-color: rgba($color-brand-500, 0.3);
+  }
+}

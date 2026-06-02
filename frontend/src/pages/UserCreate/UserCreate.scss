@@ -1,0 +1,102 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.users-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-4;
+  border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $space-5;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.page-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+
+  .page-title-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $color-brand-400;
+  }
+}
+
+.page-subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $space-1;
+}
+
+.create-page-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: $space-4 0;
+}
+
+.create-form-wrapper {
+  width: 100%;
+  max-width: 640px;
+}
+
+.form-panel {
+  @include glassmorphic(0.4, 8px, 0.8);
+  padding: $space-6;
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.panel-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+
+  .panel-title-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $color-brand-400;
+  }
+}
+
+.panel-subtitle {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  .submit-btn-wrapper {
+    margin-top: $space-2;
+    width: 100%;
+  }
+}

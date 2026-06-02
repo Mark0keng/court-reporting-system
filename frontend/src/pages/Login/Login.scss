@@ -1,0 +1,196 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-bg-deep;
+  color: $color-text-primary;
+  position: relative;
+  overflow: hidden;
+  padding: $space-4;
+  font-family: $font-family-sans;
+}
+
+// Premium dynamic ambient glow circles
+.login-bg-glow-1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba($color-brand-600, 0.15) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.login-bg-glow-2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba($color-indigo-600, 0.15) 0%, transparent 70%);
+  filter: blur(120px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.login-card-wrapper {
+  width: 100%;
+  max-width: 440px;
+  z-index: 10;
+  position: relative;
+  @include hover-lift(0.99, -4px);
+}
+
+.login-card {
+  @include glassmorphic(0.55, 24px, 0.85);
+  border-radius: $radius-2xl;
+  padding: $space-8 $space-8 $space-6;
+  box-shadow: $shadow-xl, 0 0 40px rgba($color-brand-500, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.login-brand-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $space-2;
+}
+
+.login-logo-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-2xl;
+  background: linear-gradient(135deg, rgba($color-brand-500, 0.2) 0%, rgba($color-indigo-500, 0.2) 100%);
+  border: 1px solid rgba($color-brand-400, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $space-2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: $radius-xl;
+  background: linear-gradient(135deg, $color-brand-600 0%, $color-indigo-600 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-primary;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.login-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-extrabold;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, $color-brand-300 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.login-subtitle {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.login-input-group {
+  position: relative;
+
+  .login-input-icon {
+    position: absolute;
+    left: $space-4;
+    top: 43px; // Aligns perfectly under the label inside the input field
+    color: $color-text-muted;
+    z-index: 5;
+    pointer-events: none;
+    @include transition-smooth(color);
+  }
+
+  // Adjust padding of the custom Input element to prevent overlay
+  .login-input-field input {
+    padding-left: 2.75rem !important;
+    background-color: rgba($color-bg-deep, 0.5);
+    border-color: rgba($color-border-base, 0.6);
+
+    &:focus {
+      border-color: $color-brand-500;
+      box-shadow: 0 0 0 3px rgba($color-brand-500, 0.15);
+      background-color: rgba($color-bg-deep, 0.8);
+      
+      ~ .login-input-icon {
+        color: $color-brand-400;
+      }
+    }
+  }
+}
+
+.login-submit-btn {
+  margin-top: $space-2;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, $color-brand-600 0%, $color-indigo-600 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba($color-brand-600, 0.3) !important;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, $color-brand-500 0%, $color-indigo-500 100%) !important;
+    box-shadow: 0 6px 20px rgba($color-brand-500, 0.4) !important;
+  }
+}
+
+.login-card-footer {
+  text-align: center;
+  border-top: 1px solid rgba($color-border-dark, 0.8);
+  padding-top: $space-4;
+  margin-top: $space-2;
+
+  p {
+    font-size: 10px;
+    color: $color-text-muted;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+}
+
+// Fade in micro-animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

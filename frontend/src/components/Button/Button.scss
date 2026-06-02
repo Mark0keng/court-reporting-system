@@ -1,0 +1,105 @@
+@import '../../styles/config';
+@import '../../styles/mixins';
+
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-lg;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  @include transition-smooth;
+  @include hover-lift(0.98, -1px);
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    transform: none !important;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, $color-brand-600 0%, $color-indigo-600 100%);
+  color: $color-text-primary;
+  box-shadow: $shadow-brand;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, $color-brand-500 0%, $color-indigo-500 100%);
+  }
+}
+
+.btn-secondary {
+  background-color: $color-bg-panel;
+  color: $color-text-secondary;
+  border-color: rgba($color-border-base, 0.8);
+
+  &:hover:not(:disabled) {
+    background-color: $color-bg-light;
+    color: $color-text-primary;
+  }
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, $color-error-text 0%, #dc2626 100%);
+  color: $color-text-primary;
+  box-shadow: $shadow-rose;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: $color-border-base;
+  color: $color-text-secondary;
+
+  &:hover:not(:disabled) {
+    border-color: $color-text-muted;
+    color: $color-text-primary;
+  }
+}
+
+.btn-sm {
+  font-size: $font-size-xs;
+  padding: $space-2 $space-3;
+  gap: $space-1-5;
+}
+
+.btn-md {
+  font-size: $font-size-sm;
+  padding: $space-2-5 $space-4;
+  gap: $space-2;
+}
+
+.btn-lg {
+  font-size: $font-size-base;
+  padding: $space-3-5 $space-6;
+  gap: $space-2-5;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-spinner {
+  animation: spin 1s linear infinite;
+  margin-left: -0.25rem;
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  color: currentColor;
+
+  .btn-spinner-track {
+    opacity: 0.25;
+  }
+
+  .btn-spinner-head {
+    opacity: 0.75;
+  }
+}
