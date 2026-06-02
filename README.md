@@ -102,6 +102,7 @@ cd frontend && npm run dev
 With both servers running, navigate to the frontend URL (e.g., `http://localhost:5173`) to interact with the application.
 
 ---
+
 ## Testing Flow
 
 1. **Login as Admin** – use credentials from `seed.ts` (e.g., email `budi@court.go.id`, password `admin123`).
@@ -113,15 +114,44 @@ With both servers running, navigate to the frontend URL (e.g., `http://localhost
 > The seed file (`backend/src/db/seed.ts`) lists the emails and passwords for all preset users.
 
 ---
+
 ## Useful Scripts Summary
 
-| Script                        | Description                                                 |
-| --------------------------    | ----------------------------------------------------------- |
-| `npm run dev` (backend)       | Starts the Express server with live TypeScript compilation. |
-| `npm run db:push` (backend)   | Syncs the Drizzle schema to the database (creates tables).  |
-| `npm run db:migrate` (backend)| Runs migration files (if you use migration scripts).        |
-| `npm run db:seed` (backend)   | Populates the database with seed data.                      |
-| `npm run dev` (frontend)      | Starts the Vite dev server (React UI).                      |
-| `npm run build` (frontend)    | Produces a production‑ready bundle in `dist/`.              |
+| Script                         | Description                                                 |
+| ------------------------------ | ----------------------------------------------------------- |
+| `npm run dev` (backend)        | Starts the Express server with live TypeScript compilation. |
+| `npm run db:push` (backend)    | Syncs the Drizzle schema to the database (creates tables).  |
+| `npm run db:migrate` (backend) | Runs migration files (if you use migration scripts).        |
+| `npm run db:seed` (backend)    | Populates the database with seed data.                      |
+| `npm run dev` (frontend)       | Starts the Vite dev server (React UI).                      |
+| `npm run build` (frontend)     | Produces a production‑ready bundle in `dist/`.              |
 
 ---
+
+## Screenshots Preview
+
+Here is a visual overview of the application flow and interfaces:
+
+### 1. Job Management Dashboard
+
+![Job Management](./screenshots/job_management.png)
+
+### 2. User Management
+
+![User Management](./screenshots/user_management.png)
+
+### 3. Assign Reporter
+
+![Assign Reporter](./screenshots/assign_reporter.png)
+
+### 4. Submit Transcript (Reporter View)
+
+![Submit Transcript](./screenshots/submint_transcript.png)
+
+### 5. Assign Editor
+
+![Assign Editor](./screenshots/assign_editor.png)
+
+### 6. Review & Complete (Editor View)
+
+![Submit Reviewed Transcript](./screenshots/submit_reviewed_transcript.png)
